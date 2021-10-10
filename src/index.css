@@ -1,6 +1,23 @@
+@namespace svg "http://www.w3.org/2000/svg";
+
+:not(svg|*) {
+  all: unset;
+  display: revert;
+  box-sizing: border-box;
+}
+
+[default-styles] {
+  all: revert;
+}
+
+@font-face {
+  font-family: 'Montserrat SemiBold';
+  src: url("assets/font/Montserrat-SemiBold.ttf");
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Montserrat SemiBold', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -11,3 +28,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root {
+  --cobalt: #4751C0;
+  --cobalt-shadow: #424A9E;
+  --dark-cobalt: #4953BE;
+  --yellow-acsent: #F8D948;
+  --score: #FF7878;
+  --white-text: #ffffff;
+  --accent-shadow: #C65252;
+}
+
+/* reset */
+
+html, body, #root, .App {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+

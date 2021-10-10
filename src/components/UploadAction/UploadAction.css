@@ -1,0 +1,30 @@
+.upload-action__wrapper {
+  display: flex;
+}
+
+.upload-action__input + .upload-action__label {
+  background-color: var(--yellow-acsent);
+  color: var(--cobalt-shadow);
+  border: none;
+  border-radius: 15px;
+  padding: 20px 50px 20px 50px;
+  font-size: 24px;
+  transform: scale(1);
+  transition: all 0.4s ease-in-out;
+}
+
+.upload-action__label:hover {
+  transform: scale(1.1);
+  transition: all 0.4s ease-in-out;
+}
+
+.upload-action__input:focus + .upload-action__label {
+  filter: drop-shadow(
+          1px 2px 8px hsl(49, 70%, 70%)
+  );
+}
+
+.upload-action__input:active + .upload-action__label {
+  background-color: #C65252;
+  transition: 0s ease-in-out;
+}

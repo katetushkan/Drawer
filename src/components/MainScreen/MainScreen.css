@@ -1,0 +1,44 @@
+.main-screen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex: 1;
+  background-color: var(--cobalt);
+}
+
+.main-screen__content-wrapper {
+  margin: 140px auto 140px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.main-screen__controls-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+  gap: 30px;
+}
+
+.main-screen__error-message {
+  margin-top: 10px ;
+  color: #C65252;
+  text-align: left;
+}
+
+.main-screen__canvas {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 50px;
+  width: 500px;
+  height: 500px;
+  max-width: 800px;
+  max-height: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}

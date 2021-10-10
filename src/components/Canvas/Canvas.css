@@ -1,0 +1,17 @@
+.canvas__content-holder {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+
+}
+
+.canvas__column {
+  display: flex;
+  flex-direction: column;
+  color: #F8D948;
+}
+
+.canvas {
+  overflow: auto;
+}
