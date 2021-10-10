@@ -6,20 +6,17 @@ import Char from "./Char/Char";
 
 
 const Canvas = ({className, canvas}) => {
-    debugger
     return (
         <div className={clsx("canvas", className)}>
             <div className="canvas__content-holder">
-                {canvas ? canvas.map((items) => {
+                {canvas && canvas.map((items, index) => {
                         return (
-                            <div className="canvas__column">
-                                {items.map((subItems) => {
-                                    return <Char char={subItems.type}/>;
-                                })}
+                            <div key={index} className="canvas__column">
+                                {items.map((subItems, idx) => <Char key={idx} char={subItems.type}/>)}
                             </div>
                         );
                     }
-                ) : '' }
+                )}
             </div>
         </div>
     )

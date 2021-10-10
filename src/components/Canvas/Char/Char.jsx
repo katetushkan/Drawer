@@ -4,16 +4,15 @@ import clsx from "clsx";
 import './Char.css';
 
 const CHARS = {
-    0: ' ',
+    0: <>&nbsp;</>,
     1: 'x',
     2: 'o'
 }
 
 const Char = ({char, className}) => {
-    debugger
     return (
-        <pre className={clsx('char', className)}>{char.type === 0 ? <>&npsp;</> : CHARS[char]}</pre>
-    )
+        <span className={clsx('char', className)}>{CHARS[char]}</span>
+    );
 }
 
 export default Char;

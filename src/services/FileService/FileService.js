@@ -13,9 +13,7 @@ export class FileService {
         })
     }
 
-    writeTextToFile(fileName, text) {
-        let blob = new Blob([text], { type:"text/plain" });
-        return blob;
+    createTextFile(text) {
+        return new Blob([text], {type: "text/plain"});
     }
-
 }

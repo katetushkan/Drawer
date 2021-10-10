@@ -5,11 +5,9 @@ import {ServiceProvider} from "./services/ServiceProvider";
 
 function App() {
   return (
-    <div className="App">
-        <ServiceProvider>
-            <MainScreen/>
-        </ServiceProvider>
-    </div>
+    <ServiceProvider>
+        <MainScreen/>
+    </ServiceProvider>
   );
 }
 

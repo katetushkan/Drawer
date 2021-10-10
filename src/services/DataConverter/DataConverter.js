@@ -15,9 +15,6 @@ export const CHARS = {
 }
 
 export class DataConverter {
-
-
-
     parseCommands(text) {
         const lines = text.trim().split("\n");
         return lines.map((line) => {
@@ -25,7 +22,6 @@ export class DataConverter {
             return this.parseCommand(chars);
         });
     }
-
 
     serializeCanvas(canvas) {
         let finalStr = "";
