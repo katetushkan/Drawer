@@ -1,6 +1,7 @@
 .canvas__content-holder {
   display: flex;
   flex-direction: row;
+  margin: auto;
 }
 
 .canvas__column {
