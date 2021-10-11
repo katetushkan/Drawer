@@ -12,7 +12,7 @@ const Canvas = ({className, canvas}) => {
                 {canvas && canvas.map((items, index) => {
                         return (
                             <div key={index} className="canvas__column">
-                                {items.map((subItems, idx) => <Char key={idx} char={subItems.type}/>)}
+                                {items.map((subItems, idx) => <Char key={idx} char={subItems}/>)}
                             </div>
                         );
                     }

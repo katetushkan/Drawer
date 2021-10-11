@@ -31,8 +31,6 @@
 
 .main-screen__canvas {
   display: flex;
-  justify-content: center;
-  align-content: center;
   margin-bottom: 50px;
   width: 500px;
   height: 500px;

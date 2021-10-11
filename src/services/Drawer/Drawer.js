@@ -6,32 +6,35 @@ export const FIELD_TYPES = {
 }
 export class Drawer {
 
-    FIELD_TYPES = {
-        EMPTY: 0,
-        LINE: 1,
-        FILL: 2,
-    }
-
     canvas = null;
 
     executeCommand(command) {
         switch (command.type) {
-            case COMMAND_TYPES.CANVAS:
-                this.createCanvas(command);
+            case COMMAND_TYPES.CANVAS: {
+                const {width, height} = command
+                this.createCanvas(width, height);
                 break;
-            case COMMAND_TYPES.LINE:
-                this.createLine(command);
+            }
+            case COMMAND_TYPES.LINE: {
+                const {x1, y1, x2, y2} = command
+                this.createLine(x1, y1, x2, y2);
                 break;
-            case COMMAND_TYPES.RECTANGLE:
-                this.createRectangle(command);
+            }
+            case COMMAND_TYPES.RECTANGLE: {
+                const {x1, y1, x2, y2} = command
+                this.createRectangle(x1, y1, x2, y2);
                 break;
-            case COMMAND_TYPES.FILL:
-                this.bucketFill(command);
+            }
+            case COMMAND_TYPES.FILL: {
+                const {x, y, colour} = command
+                this.bucketFill(x, y, colour);
                 break;
+            }
+
         }
     }
 
-    createCanvas({width, height}) {
+    createCanvas(width, height) {
         if (this.canvas) {
             console.warn('Re-crating canvas');
         }
@@ -41,12 +44,12 @@ export class Drawer {
         for (let w = 0; w < width; w++) {
             this.canvas[w] = []
             for (let h = 0; h < height; h++) {
-                this.canvas[w][h] = { type: FIELD_TYPES.EMPTY, data: {colour: " "} };
+                this.canvas[w][h] = { type: FIELD_TYPES.EMPTY };
             }
         }
     }
 
-    createLine({x1, y1, x2, y2}) {
+    createLine(x1, y1, x2, y2) {
         if (!this.canvas) {
             throw new Error('Attempt to operate on non-existent canvas');
         }
@@ -71,7 +74,7 @@ export class Drawer {
 
     }
 
-    createRectangle({ x1, y1, x2, y2 }) {
+    createRectangle( x1, y1, x2, y2 ) {
         if (!this.canvas) {
             throw new Error('Attempt to operate on non-existent canvas');
         }
@@ -109,7 +112,7 @@ export class Drawer {
         }
     }
 
-    bucketFill({x, y, colour}) {
+    bucketFill(x, y, colour) {
         if (!this.canvas) {
             throw new Error('Attempt to operate on non-existent canvas');
         }
