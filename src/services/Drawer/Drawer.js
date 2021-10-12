@@ -116,14 +116,14 @@ export class Drawer {
         if (!this.canvas) {
             throw new Error('Attempt to operate on non-existent canvas');
         }
-        if (this.canvas[x-1][y-1].type === FIELD_TYPES.FILL) {
-            return;
-        }
         if (x < 0 || x >= this.canvas.length) {
             throw new Error(`Point coordinate out of bound (x: ${x})`);
         }
         if (y < 0 || y >= this.canvas[0].length) {
             throw new Error(`Point coordinate out of bound (y: ${y})`);
+        }
+        if (this.canvas[x-1][y-1].type === FIELD_TYPES.FILL) {
+            return;
         }
 
         const fromColour = this.canvas[x-1][y-1].type;
